@@ -1,10 +1,9 @@
-title: 个人学习博客
-description: 课程实验博客 - 记录学习历程与技术心得
-
+title: sgzks 的博客
+description: 我的 Jekyll 静态博客实验网站
 author:
-  name: 第七组：张静火、王翼龙、厉传禹、张祎涵、王子潭
+  name: 学生姓名
   email: student@example.com
-  github: sgzks
+  github: https://github.com/sgzks
 
 baseurl: ""
 url: "https://sgzks.github.io"
@@ -27,7 +26,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "张静火、王翼龙、厉传禹、张祎涵、王子潭"
+      author: "学生姓名"
 
 plugins:
   - jekyll-feed

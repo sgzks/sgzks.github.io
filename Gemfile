@@ -1,10 +1,9 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3"
-gem "kramdown-parser-gfm"
-gem "jekyll-feed", "~> 0.17"
-gem "jekyll-sitemap", "~> 1.4"
-gem "rouge", "~> 4.1"
+gem "jekyll", "~> 4.4"
 gem "webrick", "~> 1.8"
-gem "jekyll-sass-converter", "~> 2.2"
-gem "bigdecimal"
+
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-sitemap"
+end
