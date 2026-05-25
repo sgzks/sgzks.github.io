@@ -6,22 +6,22 @@ title: 关于
 <div class="about-page">
   <div class="profile">
     <div class="avatar"></div>
-    <h1>学生姓名</h1>
-    <p>计算机科学与技术专业 202X 级本科生</p>
+    <h1>第七组</h1>
+    <p>创新实验课程小组</p>
   </div>
 
-  <h2>关于这个博客</h2>
-  <p>这是一个用于记录学习笔记和课程实验的个人博客。通过 Jekyll 静态网站生成器构建，托管在 GitHub Pages 上。</p>
+  <h2>关于我们</h2>
+  <p>我们是第七组，负责完成本次创新实验课程网站的设计、内容整理与部署维护。</p>
 
-  <h2>学习目标</h2>
+  <h2>小组成员</h2>
   <ul>
-    <li>掌握 Web 开发技术</li>
-    <li>深入理解静态网站生成原理</li>
-    <li>学习版本控制与持续部署</li>
-    <li>培养技术文档写作能力</li>
+    <li>张静火</li>
+    <li>王翼龙</li>
+    <li>厉传禹</li>
+    <li>张祎涵</li>
+    <li>王子潭</li>
   </ul>
 
-  <h2>联系方式</h2>
-  <p>GitHub：<a href="{{ site.author.github }}" target="_blank">{{ site.author.github }}</a></p>
-  <p>邮箱：{{ site.author.email }}</p>
+  <h2>项目说明</h2>
+  <p>本网站使用 Jekyll 构建，并通过 GitHub Pages 进行发布，用于展示课程实验内容、学习记录和项目成果。</p>
 </div>
