@@ -1,0 +1,34 @@
+title: 个人学习博客
+description: 课程实验博客 - 记录学习历程与技术心得
+
+author:
+  name: 第七组：张静火、王翼龙、厉传禹、张祎涵、王子潭
+  email: student@example.com
+  github: sgzks
+
+baseurl: ""
+url: "https://sgzks.github.io"
+github_username: sgzks
+permalink: /posts/:title/
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+
+collections:
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "张静火、王翼龙、厉传禹、张祎涵、王子潭"
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap

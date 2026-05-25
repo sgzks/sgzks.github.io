@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jekyll 静态网站生成入门教程</title>
+  <meta name="description" content="课程实验博客 - 记录学习历程与技术心得">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {
+    delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+    ]
+});"></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="/" class="site-title">个人学习博客</a>
+        <ul class="nav-links">
+          <li><a href="/" >首页</a></li>
+          <li><a href="/about/" >关于</a></li>
+          <li><a href="/categories/" >分类</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container content">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Jekyll 静态网站生成入门教程</h1>
+    <div class="post-meta">
+      <span class="post-date">2025年05月17日</span>
+      <span class="post-author">作者：第七组：张静火,王翼龙,厉传禹,张祎涵,王子潭</span>
+      <span class="post-category">分类：<a href="/categories/#技术教程">技术教程</a></span>
+    </div>
+    
+    <div class="post-tags">
+      标签：
+      
+      <span class="tag">Jekyll</span>
+      
+      <span class="tag">静态网站</span>
+      
+      <span class="tag">GitHub Pages</span>
+      
+      <span class="tag">Web开发</span>
+      
+    </div>
+    
+  </header>
+
+  <div class="post-content">
+    <h2 id="什么是-jekyll">什么是 Jekyll</h2>
+
+<p>Jekyll 是一个简单的博客形态的静态网站生成器。它使用 Markdown 来撰写内容，通过 Liquid 模板引擎来构建页面布局，最终生成静态 HTML 文件。</p>
+
+<h2 id="jekyll-的核心概念">Jekyll 的核心概念</h2>
+
+<h3 id="front-matter">Front Matter</h3>
+
+<p>Front Matter 是位于 Markdown 文件顶部的一段 YAML 配置区域，用三条短横线 <code class="language-plaintext highlighter-rouge">---</code> 包裹。它用于定义页面的元数据，如标题、日期、分类等。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">文章标题"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2024-01-01</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">技术教程"</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Jekyll"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">教程"</span><span class="pi">]</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h3 id="liquid-模板引擎">Liquid 模板引擎</h3>
+
+<p>Liquid 是 Jekyll 默认使用的模板引擎，它允许在 HTML 文件中插入动态内容。</p>
+
+<p>下面列举 Liquid 的几种常用语法：</p>
+
+<ul>
+  <li><strong>输出变量</strong>：使用双花括号，如 <code class="language-plaintext highlighter-rouge">{{ page.title }}</code></li>
+  <li><strong>条件语句</strong>：使用 <code class="language-plaintext highlighter-rouge">{% if %}</code> … <code class="language-plaintext highlighter-rouge">{% endif %}</code></li>
+  <li><strong>循环语句</strong>：使用 <code class="language-plaintext highlighter-rouge">{% for %}</code> … <code class="language-plaintext highlighter-rouge">{% endfor %}</code></li>
+  <li><strong>模板继承</strong>：通过 <code class="language-plaintext highlighter-rouge">layout</code> 在 Front Matter 中指定</li>
+</ul>
+
+<h2 id="代码示例">代码示例</h2>
+
+<p>下面是一个使用 Jekyll 创建博客列表的示例代码：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% for post in site.posts %}
+<span class="nt">&lt;article&gt;</span>
+  <span class="nt">&lt;h2&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ post.url }}"</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/a&gt;&lt;/h2&gt;</span>
+  <span class="nt">&lt;p&gt;</span>{{ post.date | date: "%Y-%m-%d" }}<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>{{ post.excerpt }}<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+{% endfor %}
+</code></pre></div></div>
+
+<h2 id="表格示例">表格示例</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>功能</th>
+      <th>描述</th>
+      <th>状态</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Markdown 支持</td>
+      <td>支持 GitHub Flavored Markdown</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Liquid 模板</td>
+      <td>强大的模板引擎</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>代码高亮</td>
+      <td>使用 Rouge 高亮代码</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>数学公式</td>
+      <td>支持 LaTeX 语法</td>
+      <td>✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="数学公式示例">数学公式示例</h2>
+
+<p>Jekyll 支持数学公式渲染。以下是一些常用公式示例：</p>
+
+<h3 id="行内公式">行内公式</h3>
+
+<p>欧拉公式：$e^{i\pi} + 1 = 0$</p>
+
+<h3 id="块级公式">块级公式</h3>
+
+<p>二次方程求根公式：</p>
+
+\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+
+<p>矩阵示例：</p>
+
+\[\begin{bmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{bmatrix}\]
+
+<h2 id="引用样式">引用样式</h2>
+
+<blockquote>
+  <p>静态网站生成器的优势在于：不需要数据库，部署简单，加载速度快，安全性高。</p>
+</blockquote>
+
+<h2 id="键盘快捷键提示">键盘快捷键提示</h2>
+
+<p>使用 <kbd>Ctrl</kbd> + <kbd>S</kbd> 可以快速保存文件，使用 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> 可以打开命令面板。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>通过本教程，我们学习了：</p>
+
+<ol>
+  <li><strong>Front Matter</strong> 的作用和用法</li>
+  <li><strong>Liquid 模板</strong> 的基本语法</li>
+  <li><strong>代码高亮</strong> 的实现方式</li>
+  <li><strong>数学公式</strong> 的渲染方法</li>
+  <li><strong>表格、图片、引用</strong> 等内容的展示</li>
+</ol>
+
+<p>Jekyll 是一个非常适合构建个人博客和技术文档的工具，配合 GitHub Pages 可以实现免费的静态网站托管。</p>
+
+  </div>
+</article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 个人学习博客. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

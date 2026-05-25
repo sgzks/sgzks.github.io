@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:8080/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:8080/" rel="alternate" type="text/html" /><updated>2026-05-25T22:35:22+08:00</updated><id>http://localhost:8080/feed.xml</id><title type="html">个人学习博客</title><subtitle>课程实验博客 - 记录学习历程与技术心得</subtitle><author><name>学生姓名</name><email>student@example.com</email></author><entry><title type="html">曲面积分的学习心得</title><link href="http://localhost:8080/posts/surface-integral/" rel="alternate" type="text/html" title="曲面积分的学习心得" /><published>2025-05-17T00:00:00+08:00</published><updated>2025-05-17T00:00:00+08:00</updated><id>http://localhost:8080/posts/surface-integral</id><content type="html" xml:base="http://localhost:8080/posts/surface-integral/"><![CDATA[<h2 id="引言">引言</h2>
+
+<p>曲面积分是多元函数微积分中的重要内容，也是高等数学学习中的一个难点。通过这段时间的学习，我们对曲面积分的概念、计算方法和应用有了更深入的理解。本文将分享我们在学习过程中的心得体会。</p>
+
+<h2 id="一曲面积分的概念">一、曲面积分的概念</h2>
+
+<h3 id="11-第一型曲面积分">1.1 第一型曲面积分</h3>
+
+<p>第一型曲面积分，也称为<strong>对面积的曲面积分</strong>，用于计算曲面上的质量、重心等物理量。其定义为：</p>
+
+\[\iint_{\Sigma} f(x,y,z) \, dS\]
+
+<p>其中 $dS$ 表示曲面 $\Sigma$ 上的面积元素，可表示为：</p>
+
+\[dS = \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} \, dxdy\]
+
+<h3 id="12-第二型曲面积分">1.2 第二型曲面积分</h3>
+
+<p>第二型曲面积分，也称为<strong>对坐标的曲面积分</strong>，用于计算流体流量等矢量场相关问题。其定义为：</p>
+
+\[\iint_{\Sigma} P \, dydz + Q \, dzdx + R \, dxdy\]
+
+<h2 id="二两类曲面积分的关系">二、两类曲面积分的关系</h2>
+
+<p>两类曲面积分之间存在如下关系：</p>
+
+\[\iint_{\Sigma} P \, dydz + Q \, dzdx + R \, dxdy = \iint_{\Sigma} (P\cos\alpha + Q\cos\beta + R\cos\gamma) \, dS\]
+
+<p>其中 $\cos\alpha, \cos\beta, \cos\gamma$ 是曲面 $\Sigma$ 上点 $(x,y,z)$ 处法向量的方向余弦。</p>
+
+<h2 id="三高斯公式散度定理">三、高斯公式（散度定理）</h2>
+
+<p>高斯公式建立了空间闭区域上的三重积分与区域边界曲面上的曲面积分之间的联系：</p>
+
+\[\iiint_{\Omega} \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dV = \iint_{\Sigma} P \, dydz + Q \, dzdx + R \, dxdy\]
+
+<p><strong>物理意义</strong>：空间闭区域 $\Omega$ 内的散度总和等于穿过边界曲面 $\Sigma$ 的通量。</p>
+
+<h2 id="四斯托克斯公式">四、斯托克斯公式</h2>
+
+<p>斯托克斯公式建立了曲面上的曲面积分与曲面边界曲线上的曲线积分之间的联系：</p>
+
+\[\oint_{\Gamma} P \, dx + Q \, dy + R \, dz = \iint_{\Sigma} \begin{vmatrix}
+dydz &amp; dzdx &amp; dxdy \\
+\frac{\partial}{\partial x} &amp; \frac{\partial}{\partial y} &amp; \frac{\partial}{\partial z} \\
+P &amp; Q &amp; R
+\end{vmatrix}\]
+
+<h2 id="五计算方法总结">五、计算方法总结</h2>
+
+<h3 id="51-第一型曲面积分计算步骤">5.1 第一型曲面积分计算步骤</h3>
+
+<ol>
+  <li><strong>确定曲面方程</strong>：$z = z(x,y)$</li>
+  <li><strong>计算面积元素</strong>：$dS = \sqrt{1 + z_x^2 + z_y^2} \, dxdy$</li>
+  <li><strong>确定投影区域</strong>：$D_{xy}$</li>
+  <li><strong>转化为二重积分</strong>：</li>
+</ol>
+
+\[\iint_{\Sigma} f(x,y,z) \, dS = \iint_{D_{xy}} f(x,y,z(x,y)) \sqrt{1 + z_x^2 + z_y^2} \, dxdy\]
+
+<h3 id="52-第二型曲面积分计算步骤">5.2 第二型曲面积分计算步骤</h3>
+
+<ol>
+  <li><strong>确定曲面的侧</strong>：分清曲面的上侧与下侧、前侧与后侧、右侧与左侧</li>
+  <li><strong>选择投影面</strong>：根据被积表达式选择合适的投影方向</li>
+  <li><strong>确定符号</strong>：根据曲面侧的方向确定正负号</li>
+</ol>
+
+<h2 id="六学习心得体会">六、学习心得体会</h2>
+
+<h3 id="61-难点与挑战">6.1 难点与挑战</h3>
+
+<ol>
+  <li><strong>概念抽象</strong>：曲面积分涉及三维空间，比平面积分更难直观理解</li>
+  <li><strong>符号问题</strong>：第二型曲面积分的方向判断容易出错</li>
+  <li><strong>计算量大</strong>：通常需要多次求偏导和积分运算</li>
+</ol>
+
+<h3 id="62-学习方法">6.2 学习方法</h3>
+
+<ol>
+  <li><strong>几何直观</strong>：通过画图理解曲面的形状和方向</li>
+  <li><strong>多做练习</strong>：通过大量练习熟悉各种题型</li>
+  <li><strong>联系实际</strong>：理解曲面积分的物理意义，如流量、通量等</li>
+</ol>
+
+<h3 id="63-典型例题">6.3 典型例题</h3>
+
+<p><strong>例题</strong>：计算曲面积分 $\iint_{\Sigma} xyz \, dS$，其中 $\Sigma$ 是平面 $x + y + z = 1$ 在第一卦限的部分。</p>
+
+<p><strong>解答</strong>：</p>
+<ol>
+  <li>曲面方程：$z = 1 - x - y$</li>
+  <li>偏导数：$z_x = -1, z_y = -1$</li>
+  <li>面积元素：$dS = \sqrt{3} \, dxdy$</li>
+  <li>投影区域：$D_{xy}: x \geq 0, y \geq 0, x + y \leq 1$</li>
+  <li>计算积分：</li>
+</ol>
+
+\[\iint_{\Sigma} xyz \, dS = \sqrt{3} \int_{0}^{1} \int_{0}^{1-x} xy(1-x-y) \, dydx\]
+
+\[= \sqrt{3} \int_{0}^{1} x \left[ \int_{0}^{1-x} y(1-x-y) \, dy \right] dx\]
+
+\[= \sqrt{3} \int_{0}^{1} x \cdot \frac{(1-x)^3}{6} \, dx\]
+
+\[= \frac{\sqrt{3}}{6} \int_{0}^{1} x(1-x)^3 \, dx\]
+
+\[= \frac{\sqrt{3}}{6} \cdot \frac{1}{20} = \frac{\sqrt{3}}{120}\]
+
+<h2 id="七图片位置">七、图片位置</h2>
+
+<p>以下是曲面积分相关的示意图：</p>
+
+<p><img src="/assets/images/曲面积分示意图.jpg" alt="曲面积分示意图" /></p>
+
+<h2 id="八总结">八、总结</h2>
+
+<p>曲面积分是高等数学中的重要内容，虽然学习过程中遇到了不少困难，但通过不断练习和深入理解，我们逐渐掌握了其计算方法和应用场景。在学习过程中，深刻体会到数学知识的系统性和逻辑性，每一个概念都不是孤立的，而是相互联系、相互支撑的。</p>
+
+<p><strong>参考文献</strong>：</p>
+<ul>
+  <li>同济大学数学系. 高等数学（下册）[M]. 北京：高等教育出版社</li>
+  <li>华东师范大学数学系. 数学分析（下册）[M]. 北京：高等教育出版社</li>
+</ul>]]></content><author><name>第七组：张静火,王翼龙,厉传禹,张祎涵,王子潭</name></author><category term="数学学习" /><category term="曲面积分" /><category term="高等数学" /><category term="微积分" /><category term="数学分析" /><summary type="html"><![CDATA[引言]]></summary></entry><entry><title type="html">Jekyll 静态网站生成入门教程</title><link href="http://localhost:8080/posts/example-post/" rel="alternate" type="text/html" title="Jekyll 静态网站生成入门教程" /><published>2025-05-17T00:00:00+08:00</published><updated>2025-05-17T00:00:00+08:00</updated><id>http://localhost:8080/posts/example-post</id><content type="html" xml:base="http://localhost:8080/posts/example-post/"><![CDATA[<h2 id="什么是-jekyll">什么是 Jekyll</h2>
+
+<p>Jekyll 是一个简单的博客形态的静态网站生成器。它使用 Markdown 来撰写内容，通过 Liquid 模板引擎来构建页面布局，最终生成静态 HTML 文件。</p>
+
+<h2 id="jekyll-的核心概念">Jekyll 的核心概念</h2>
+
+<h3 id="front-matter">Front Matter</h3>
+
+<p>Front Matter 是位于 Markdown 文件顶部的一段 YAML 配置区域，用三条短横线 <code class="language-plaintext highlighter-rouge">---</code> 包裹。它用于定义页面的元数据，如标题、日期、分类等。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">文章标题"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2024-01-01</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">技术教程"</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Jekyll"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">教程"</span><span class="pi">]</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h3 id="liquid-模板引擎">Liquid 模板引擎</h3>
+
+<p>Liquid 是 Jekyll 默认使用的模板引擎，它允许在 HTML 文件中插入动态内容。</p>
+
+<p>下面列举 Liquid 的几种常用语法：</p>
+
+<ul>
+  <li><strong>输出变量</strong>：使用双花括号，如 <code class="language-plaintext highlighter-rouge">{{ page.title }}</code></li>
+  <li><strong>条件语句</strong>：使用 <code class="language-plaintext highlighter-rouge">{% if %}</code> … <code class="language-plaintext highlighter-rouge">{% endif %}</code></li>
+  <li><strong>循环语句</strong>：使用 <code class="language-plaintext highlighter-rouge">{% for %}</code> … <code class="language-plaintext highlighter-rouge">{% endfor %}</code></li>
+  <li><strong>模板继承</strong>：通过 <code class="language-plaintext highlighter-rouge">layout</code> 在 Front Matter 中指定</li>
+</ul>
+
+<h2 id="代码示例">代码示例</h2>
+
+<p>下面是一个使用 Jekyll 创建博客列表的示例代码：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% for post in site.posts %}
+<span class="nt">&lt;article&gt;</span>
+  <span class="nt">&lt;h2&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ post.url }}"</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/a&gt;&lt;/h2&gt;</span>
+  <span class="nt">&lt;p&gt;</span>{{ post.date | date: "%Y-%m-%d" }}<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>{{ post.excerpt }}<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+{% endfor %}
+</code></pre></div></div>
+
+<h2 id="表格示例">表格示例</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>功能</th>
+      <th>描述</th>
+      <th>状态</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Markdown 支持</td>
+      <td>支持 GitHub Flavored Markdown</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Liquid 模板</td>
+      <td>强大的模板引擎</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>代码高亮</td>
+      <td>使用 Rouge 高亮代码</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>数学公式</td>
+      <td>支持 LaTeX 语法</td>
+      <td>✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="数学公式示例">数学公式示例</h2>
+
+<p>Jekyll 支持数学公式渲染。以下是一些常用公式示例：</p>
+
+<h3 id="行内公式">行内公式</h3>
+
+<p>欧拉公式：$e^{i\pi} + 1 = 0$</p>
+
+<h3 id="块级公式">块级公式</h3>
+
+<p>二次方程求根公式：</p>
+
+\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+
+<p>矩阵示例：</p>
+
+\[\begin{bmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{bmatrix}\]
+
+<h2 id="引用样式">引用样式</h2>
+
+<blockquote>
+  <p>静态网站生成器的优势在于：不需要数据库，部署简单，加载速度快，安全性高。</p>
+</blockquote>
+
+<h2 id="键盘快捷键提示">键盘快捷键提示</h2>
+
+<p>使用 <kbd>Ctrl</kbd> + <kbd>S</kbd> 可以快速保存文件，使用 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> 可以打开命令面板。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>通过本教程，我们学习了：</p>
+
+<ol>
+  <li><strong>Front Matter</strong> 的作用和用法</li>
+  <li><strong>Liquid 模板</strong> 的基本语法</li>
+  <li><strong>代码高亮</strong> 的实现方式</li>
+  <li><strong>数学公式</strong> 的渲染方法</li>
+  <li><strong>表格、图片、引用</strong> 等内容的展示</li>
+</ol>
+
+<p>Jekyll 是一个非常适合构建个人博客和技术文档的工具，配合 GitHub Pages 可以实现免费的静态网站托管。</p>]]></content><author><name>第七组：张静火,王翼龙,厉传禹,张祎涵,王子潭</name></author><category term="技术教程" /><category term="Jekyll" /><category term="静态网站" /><category term="GitHub Pages" /><category term="Web开发" /><summary type="html"><![CDATA[什么是 Jekyll]]></summary></entry></feed>
